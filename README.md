@@ -2,10 +2,10 @@
 
 | Přednáška | Přednášející | Stanford |
 | --------- | -------- | -------- |
-| 01 Xcode, Swift Basics | IR | [Swift](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/reading_1.pdf) |
-| 02 SwiftUI Basics | IR | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=bqu6BquVi2M) |
-| 03 More SwiftUI | RB | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=bqu6BquVi2M) |
-| 04 Navigation | RB | [Learning More about SwiftUI](https://youtu.be/3lahkdHEhW8) |
+| 01 Xcode, Swift Basics | IR | [Swift](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/r1_0.pdf) |
+| 02 SwiftUI Basics | IR | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=n1qabtjZ_jg) |
+| 03 More SwiftUI | RB | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=n1qabtjZ_jg) |
+| 04 Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
 
 V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, které slouží jako hlavní zdroj informací pro tento kurz [https://cs193p.sites.stanford.edu](https://cs193p.sites.stanford.edu).
 
