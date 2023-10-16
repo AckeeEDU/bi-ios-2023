@@ -20,6 +20,7 @@ extension User {
     static let userMock4 = User(username: "martin_král", firstName: "Martin", lastName: "Král")
     static let userMock5 = User(username: "petra_němcová", firstName: "Petra", lastName: "Němcová")
     static let userMock6 = User(username: "tomáš_veselý", firstName: "Tomáš", lastName: "Veselý")
+    static let userMockMe = User(username: "rostislav.babacek", firstName: "Rostislav", lastName: "Babáček")
 
     static let usersMock: [User] = [
         userMock2,
