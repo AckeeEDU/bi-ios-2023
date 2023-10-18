@@ -3,11 +3,17 @@
 | Přednáška | Přednášející | Stanford |
 | --------- | -------- | -------- |
 | 01 Xcode, Swift Basics | IR | [Swift](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/r1_0.pdf) |
-| 02 SwiftUI Basics | IR | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=n1qabtjZ_jg) |
+| 02 More Swift & SwiftUI Basics | IR | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=n1qabtjZ_jg) |
 | 03 More SwiftUI | RB | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=n1qabtjZ_jg) |
-| 04 Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
+| 04 More SwiftUI & Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
+| 05 Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
+| 06 Networking |  | |
 
 V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, které slouží jako hlavní zdroj informací pro tento kurz [https://cs193p.sites.stanford.edu](https://cs193p.sites.stanford.edu).
+
+> Dokumentace ke kompletnímu API je [zde](https://fitstagram.ackee.cz/docs/)
+
+> [Interactful aplikaci](https://apps.apple.com/tr/app/interactful/id1528095640) je potřeba si stáhnout na iOS zařízení. Je dostupná i pro mac, ale tam zobrazuje komponenty přizpůsobené pro macOS.
 
 ## 1. domácí úkol
 
