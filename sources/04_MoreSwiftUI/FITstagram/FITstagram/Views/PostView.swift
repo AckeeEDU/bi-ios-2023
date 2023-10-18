@@ -7,8 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    let post: Post = .postMock
+struct PostView: View {
+    // To re-enforce the local nature of @State properties, Apple recommends you mark them as private
+    @State private var isBookmarked = false
+    let post: Post
+    
+    var onCommentsTapped: (() -> Void)?
 
     // MARK: - Body
 
@@ -19,8 +23,11 @@ struct ContentView: View {
 
             Image(post.photo)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 300)
+                .aspectRatio(contentMode: .fill)
+                .frame(
+                    width: UIScreen.main.bounds.size.width,
+                    height: 300
+                )
 
             VStack(alignment: .leading, spacing: 16) {
                 buttonsHorizontalView
@@ -65,8 +72,8 @@ struct ContentView: View {
                 print($0 + " tapped!")
             }
 
-            imageButton(iconName: "message") {
-                print($0 + " tapped!")
+            imageButton(iconName: "message") { _ in
+                onCommentsTapped?()
             }
 
             imageButton(iconName: "paperplane") {
@@ -75,8 +82,10 @@ struct ContentView: View {
 
             Spacer()
 
-            imageButton(iconName: "bookmark") { name in
-                print(name + " tapped!")
+            imageButton(
+                iconName: isBookmarked ? "bookmark.fill" : "bookmark"
+            ) { _ in
+                isBookmarked.toggle()
             }
         }
     }
@@ -97,7 +106,7 @@ struct ContentView: View {
             Text(" " + "Toto je muj velmi dlouhy komentar a bude na dva radky")
 
             Button {
-                print("comments tapped!")
+                onCommentsTapped?()
             } label: {
                 Text("Zobrazit komentáře (" + String(post.numberOfComments) + ")")
                     .fontWeight(.medium)
@@ -132,5 +141,5 @@ struct ContentView: View {
 // MARK: - Preview
 
 #Preview {
-    ContentView()
+    PostView(post: .postMock)
 }

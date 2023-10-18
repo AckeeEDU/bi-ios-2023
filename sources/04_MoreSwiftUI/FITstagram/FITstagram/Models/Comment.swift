@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Comment {
+struct Comment: Identifiable {
+    let id: UUID = .init()
     let author: User
     let likes: [User]
     let text: String

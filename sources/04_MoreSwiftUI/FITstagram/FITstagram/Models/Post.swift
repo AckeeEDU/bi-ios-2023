@@ -7,10 +7,34 @@
 
 import Foundation
 
-struct Post {
+@propertyWrapper struct PhotoNamespace: Equatable {
+    private let namespace: String
+    private let value: String
+    
+    var wrappedValue: String {
+        // Wrapped value contains original value prefixed by namespace
+        namespace + "/" + value
+    }
+    
+    init(wrappedValue: String, _ namespace: String) {
+        self.namespace = namespace
+        self.value = wrappedValue
+    }
+    
+    var projectedValue: String {
+        // Projected value allows us to access original value
+        value
+    }
+}
+
+// MARK: - Post struct
+
+struct Post: Identifiable, Equatable {
+    let id = UUID()
     let author: User
     let text: String
-    let photo: String
+    @PhotoNamespace("Posts")
+    var photo: String = ""
     let likes: [User]
     let numberOfComments: Int
     

@@ -7,8 +7,32 @@
 
 import Foundation
 
-struct User {
-    let username: String
+@propertyWrapper struct Normalized: Equatable {
+    var wrappedValue: String {
+        // Wrapped value contains modified value
+        didSet {
+            wrappedValue = wrappedValue.normalized
+        }
+    }
+    
+    init(wrappedValue: String) {
+        self.wrappedValue = wrappedValue.normalized
+    }
+}
+
+extension String {
+    var normalized: String {
+        self.folding(
+            options: .diacriticInsensitive,
+            locale: .current
+        )
+    }
+}
+
+// MARK: - User struct
+
+struct User: Equatable {
+    @Normalized var username: String
     let firstName: String?
     let lastName: String?
 }

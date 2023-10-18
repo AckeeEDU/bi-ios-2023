@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		9709C4FD2AD99C6400E5769D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709C4FC2AD99C6400E5769D /* User.swift */; };
 		9709C4FF2AD99CCB00E5769D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709C4FE2AD99CCB00E5769D /* Comment.swift */; };
+		9746FE862ADED252003454C3 /* PostsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9746FE852ADED252003454C3 /* PostsListView.swift */; };
+		9746FE882ADEDB31003454C3 /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9746FE872ADEDB31003454C3 /* LikesView.swift */; };
+		9746FE8A2ADEE1B6003454C3 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9746FE892ADEE1B6003454C3 /* CommentsView.swift */; };
 		9783D0CC2AD594FE00A85508 /* FITstagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9783D0CB2AD594FE00A85508 /* FITstagramApp.swift */; };
-		9783D0CE2AD594FE00A85508 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9783D0CD2AD594FE00A85508 /* ContentView.swift */; };
+		9783D0CE2AD594FE00A85508 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9783D0CD2AD594FE00A85508 /* PostView.swift */; };
 		9783D0D02AD594FF00A85508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9783D0CF2AD594FF00A85508 /* Assets.xcassets */; };
 		9783D0D32AD594FF00A85508 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9783D0D22AD594FF00A85508 /* Preview Assets.xcassets */; };
 		9783D0DD2AD594FF00A85508 /* FITstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9783D0DC2AD594FF00A85508 /* FITstagramTests.swift */; };
@@ -40,9 +43,12 @@
 /* Begin PBXFileReference section */
 		9709C4FC2AD99C6400E5769D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9709C4FE2AD99CCB00E5769D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		9746FE852ADED252003454C3 /* PostsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListView.swift; sourceTree = "<group>"; };
+		9746FE872ADEDB31003454C3 /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
+		9746FE892ADEE1B6003454C3 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		9783D0C82AD594FE00A85508 /* FITstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FITstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9783D0CB2AD594FE00A85508 /* FITstagramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FITstagramApp.swift; sourceTree = "<group>"; };
-		9783D0CD2AD594FE00A85508 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9783D0CD2AD594FE00A85508 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		9783D0CF2AD594FF00A85508 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9783D0D22AD594FF00A85508 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9783D0D82AD594FF00A85508 /* FITstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FITstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +156,10 @@
 		97BFEC4A2AD6829400595447 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9783D0CD2AD594FE00A85508 /* ContentView.swift */,
+				9783D0CD2AD594FE00A85508 /* PostView.swift */,
+				9746FE852ADED252003454C3 /* PostsListView.swift */,
+				9746FE872ADEDB31003454C3 /* LikesView.swift */,
+				9746FE892ADEE1B6003454C3 /* CommentsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,10 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9746FE862ADED252003454C3 /* PostsListView.swift in Sources */,
 				97BFEC482AD6827700595447 /* Post.swift in Sources */,
+				9746FE8A2ADEE1B6003454C3 /* CommentsView.swift in Sources */,
 				9709C4FF2AD99CCB00E5769D /* Comment.swift in Sources */,
-				9783D0CE2AD594FE00A85508 /* ContentView.swift in Sources */,
+				9783D0CE2AD594FE00A85508 /* PostView.swift in Sources */,
 				97BFEC4D2AD6859800595447 /* ViewExtensions.swift in Sources */,
+				9746FE882ADEDB31003454C3 /* LikesView.swift in Sources */,
 				9709C4FD2AD99C6400E5769D /* User.swift in Sources */,
 				9783D0CC2AD594FE00A85508 /* FITstagramApp.swift in Sources */,
 			);
