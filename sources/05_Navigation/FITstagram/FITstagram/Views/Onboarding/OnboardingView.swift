@@ -8,43 +8,53 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        VStack(spacing: 24) {
-            Button {
+        NavigationStack(path: $path) {
+            VStack(spacing: 24) {
+                Button {
+                    path.append("onboarding")
+                } label: {
+                    Text("Launch onboarding")
+                }
                 
-            } label: {
-                Text("Launch onboarding")
+                Text(String(path.count))
             }
-            
-            Text(String("path.count"))
+            .navigationDestination(for: String.self) { string in
+                destination
+            }
+            .navigationTitle("Onboarding")
         }
     }
+    
+    // MARK: - UI Components
     
     var destination: some View {
         VStack(spacing: 24) {
             HStack(spacing: 24) {
                 Button {
-                    
+                    path.removeLast()
                 } label: {
                     Text("Zpět")
                 }
                 .tint(.red)
                 
                 Button {
-                    
+                    path.removeLast(path.count)
                 } label: {
                     Text("Zavřít")
                 }
                 .tint(.orange)
                 
                 Button {
-                    
+                    path.append("dalsi")
                 } label: {
                     Text("Další")
                 }
             }
             
-            Text(String(""))
+            Text(String(path.count))
         }
     }
 }

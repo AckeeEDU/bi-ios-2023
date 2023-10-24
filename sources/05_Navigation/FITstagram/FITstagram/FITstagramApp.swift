@@ -11,7 +11,7 @@ import SwiftUI
 struct FITstagramApp: App {
     var body: some Scene {
         WindowGroup {
-            PostsListView()
+            ContentView()
         }
     }
 }

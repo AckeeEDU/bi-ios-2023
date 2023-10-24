@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9709C4FD2AD99C6400E5769D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709C4FC2AD99C6400E5769D /* User.swift */; };
 		9709C4FF2AD99CCB00E5769D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709C4FE2AD99CCB00E5769D /* Comment.swift */; };
-		9710119B2AE5A21600172926 /* Onboarding in Resources */ = {isa = PBXBuildFile; fileRef = 9710119A2AE5A21600172926 /* Onboarding */; };
 		9710119D2AE5A22500172926 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710119C2AE5A22500172926 /* UserDetailView.swift */; };
 		9746FE862ADED252003454C3 /* PostsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9746FE852ADED252003454C3 /* PostsListView.swift */; };
 		9746FE882ADEDB31003454C3 /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9746FE872ADEDB31003454C3 /* LikesView.swift */; };
@@ -21,6 +20,9 @@
 		9783D0DD2AD594FF00A85508 /* FITstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9783D0DC2AD594FF00A85508 /* FITstagramTests.swift */; };
 		9783D0E72AD594FF00A85508 /* FITstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9783D0E62AD594FF00A85508 /* FITstagramUITests.swift */; };
 		9783D0E92AD594FF00A85508 /* FITstagramUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9783D0E82AD594FF00A85508 /* FITstagramUITestsLaunchTests.swift */; };
+		97AE176B2AE8082100B7702C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE176A2AE8082100B7702C /* OnboardingView.swift */; };
+		97AE176D2AE81A4000B7702C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE176C2AE81A4000B7702C /* ContentView.swift */; };
+		97AE17712AE8395900B7702C /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE17702AE8395900B7702C /* MyProfileView.swift */; };
 		97BFEC482AD6827700595447 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFEC472AD6827700595447 /* Post.swift */; };
 		97BFEC4D2AD6859800595447 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BFEC4C2AD6859800595447 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +47,6 @@
 /* Begin PBXFileReference section */
 		9709C4FC2AD99C6400E5769D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9709C4FE2AD99CCB00E5769D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		9710119A2AE5A21600172926 /* Onboarding */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Onboarding; sourceTree = "<group>"; };
 		9710119C2AE5A22500172926 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		9746FE852ADED252003454C3 /* PostsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListView.swift; sourceTree = "<group>"; };
 		9746FE872ADEDB31003454C3 /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
@@ -60,6 +61,9 @@
 		9783D0E22AD594FF00A85508 /* FITstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FITstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9783D0E62AD594FF00A85508 /* FITstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FITstagramUITests.swift; sourceTree = "<group>"; };
 		9783D0E82AD594FF00A85508 /* FITstagramUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FITstagramUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		97AE176A2AE8082100B7702C /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		97AE176C2AE81A4000B7702C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		97AE17702AE8395900B7702C /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		97BFEC472AD6827700595447 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		97BFEC4C2AD6859800595447 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +151,34 @@
 			path = FITstagramUITests;
 			sourceTree = "<group>";
 		};
+		97AE17692AE8082100B7702C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				97AE176A2AE8082100B7702C /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		97AE176E2AE8391F00B7702C /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				97AE17702AE8395900B7702C /* MyProfileView.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		97AE176F2AE8393400B7702C /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				9746FE852ADED252003454C3 /* PostsListView.swift */,
+				9746FE872ADEDB31003454C3 /* LikesView.swift */,
+				9746FE892ADEE1B6003454C3 /* CommentsView.swift */,
+				9710119C2AE5A22500172926 /* UserDetailView.swift */,
+				9783D0CD2AD594FE00A85508 /* PostView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		97BFEC492AD6828B00595447 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,12 +192,10 @@
 		97BFEC4A2AD6829400595447 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9710119C2AE5A22500172926 /* UserDetailView.swift */,
-				9710119A2AE5A21600172926 /* Onboarding */,
-				9783D0CD2AD594FE00A85508 /* PostView.swift */,
-				9746FE852ADED252003454C3 /* PostsListView.swift */,
-				9746FE872ADEDB31003454C3 /* LikesView.swift */,
-				9746FE892ADEE1B6003454C3 /* CommentsView.swift */,
+				97AE176C2AE81A4000B7702C /* ContentView.swift */,
+				97AE176F2AE8393400B7702C /* Feed */,
+				97AE176E2AE8391F00B7702C /* MyProfile */,
+				97AE17692AE8082100B7702C /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,7 +314,6 @@
 			files = (
 				9783D0D32AD594FF00A85508 /* Preview Assets.xcassets in Resources */,
 				9783D0D02AD594FF00A85508 /* Assets.xcassets in Resources */,
-				9710119B2AE5A21600172926 /* Onboarding in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +340,8 @@
 			files = (
 				9746FE862ADED252003454C3 /* PostsListView.swift in Sources */,
 				97BFEC482AD6827700595447 /* Post.swift in Sources */,
+				97AE176D2AE81A4000B7702C /* ContentView.swift in Sources */,
+				97AE17712AE8395900B7702C /* MyProfileView.swift in Sources */,
 				9746FE8A2ADEE1B6003454C3 /* CommentsView.swift in Sources */,
 				9709C4FF2AD99CCB00E5769D /* Comment.swift in Sources */,
 				9783D0CE2AD594FE00A85508 /* PostView.swift in Sources */,
@@ -319,6 +350,7 @@
 				9709C4FD2AD99C6400E5769D /* User.swift in Sources */,
 				9710119D2AE5A22500172926 /* UserDetailView.swift in Sources */,
 				9783D0CC2AD594FE00A85508 /* FITstagramApp.swift in Sources */,
+				97AE176B2AE8082100B7702C /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

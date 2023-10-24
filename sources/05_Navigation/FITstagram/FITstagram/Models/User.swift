@@ -7,7 +7,7 @@
 
 import Foundation
 
-@propertyWrapper struct Normalized: Equatable {
+@propertyWrapper struct Normalized: Equatable, Hashable {
     var wrappedValue: String {
         // Wrapped value contains modified value
         didSet {
@@ -31,7 +31,7 @@ extension String {
 
 // MARK: - User struct
 
-struct User: Equatable {
+struct User: Equatable, Hashable {
     @Normalized var username: String
     let firstName: String?
     let lastName: String?

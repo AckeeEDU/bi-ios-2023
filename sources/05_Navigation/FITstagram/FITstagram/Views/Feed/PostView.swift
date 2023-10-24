@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct PostView: View {
+    // MARK: - Public properties
+    let post: Post
+    var onCommentsTapped: (() -> Void)?
+                           
+    // MARK: - Private properties
     // To re-enforce the local nature of @State properties, Apple recommends you mark them as private
     @State private var isBookmarked = false
-    let post: Post
-    
-    var onCommentsTapped: (() -> Void)?
 
     // MARK: - Body
 
@@ -29,29 +31,23 @@ struct PostView: View {
                     height: 300
                 )
 
-            VStack(alignment: .leading, spacing: 16) {
-                buttonsHorizontalView
-                    .frame(height: 24)
-
-                footerView
-                    .frame(
-                        maxWidth: .infinity,
-                        alignment: .leading
-                    )
-            }
+            footerView
             .padding(.top, 2)
             .padding(.horizontal)
         }
         .tint(.pink) // Tint color is applied to all nested precedents
     }
 
-    // MARK: - Main components
+    // MARK: - UI Components
 
     var headerView: some View {
         HStack {
-            Text(post.author.username)
-                .font(.subheadline)
-                .fontWeight(.semibold)
+            NavigationLink(value: post.author) {
+                Text(post.author.username)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.myForeground)
+            }
 
             Spacer()
 
@@ -66,6 +62,19 @@ struct PostView: View {
         }
     }
 
+    var footerView: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            buttonsHorizontalView
+                .frame(height: 24)
+
+            footerTextsView
+                .frame(
+                    maxWidth: .infinity,
+                    alignment: .leading
+                )
+        }
+    }
+    
     var buttonsHorizontalView: some View {
         HStack(spacing: 16) {
             imageButton(iconName: "heart") {
@@ -90,14 +99,12 @@ struct PostView: View {
         }
     }
 
-    var footerView: some View {
+    var footerTextsView: some View {
         VStack(alignment: .leading, spacing: 7) {
-            Button {
-                print("likes tapped!")
-            } label: {
+            NavigationLink(value: post.likes) {
                 Text(String(post.numberOfLikes) + " To se mi líbí!")
                     .fontWeight(.semibold)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.myForeground)
             }
 
             Text(post.author.username)
@@ -114,8 +121,6 @@ struct PostView: View {
             }
         }
     }
-
-    // MARK: - Helpers
 
     /// Returns button with a wrapped image for given system icon name
     /// - Parameters:
@@ -141,5 +146,7 @@ struct PostView: View {
 // MARK: - Preview
 
 #Preview {
-    PostView(post: .postMock)
+    NavigationStack {
+        PostView(post: .postMock)
+    }
 }

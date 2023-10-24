@@ -7,7 +7,7 @@
 
 import Foundation
 
-@propertyWrapper struct PhotoNamespace: Equatable {
+@propertyWrapper struct PhotoNamespace: Equatable, Hashable {
     private let namespace: String
     private let value: String
     
@@ -29,7 +29,7 @@ import Foundation
 
 // MARK: - Post struct
 
-struct Post: Identifiable, Equatable {
+struct Post: Identifiable, Equatable, Hashable {
     let id = UUID()
     let author: User
     let text: String

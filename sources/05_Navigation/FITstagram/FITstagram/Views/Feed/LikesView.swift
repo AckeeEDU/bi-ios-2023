@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LikesView: View {
-    private let likes = Post.postMock.likes
+    let likes: [User]
     
     // MARK: - Body
     
@@ -26,5 +26,5 @@ struct LikesView: View {
 }
 
 #Preview {
-    LikesView()
+    LikesView(likes: [])
 }
