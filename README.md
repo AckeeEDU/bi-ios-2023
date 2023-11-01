@@ -7,7 +7,8 @@
 | 03 More SwiftUI | RB | [Getting Started with SwiftUI](https://www.youtube.com/watch?v=n1qabtjZ_jg) |
 | 04 More SwiftUI & Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
 | 05 Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
-| 06 Networking |  | |
+| 06 Networking |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
+| 06 Async/await |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
 
 V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, které slouží jako hlavní zdroj informací pro tento kurz [https://cs193p.sites.stanford.edu](https://cs193p.sites.stanford.edu).
 
@@ -55,3 +56,13 @@ Rozsah práce by mělo být 3 - 5 obrazovek (může být míň, pokud to dává 
   * `View`, `some`, `@ViewBuilder`
   * `VStack`, `HStack`, `Text`, `Button`, `Image`
   * SFSymbols
+
+### 06 Networking
+* Multithreading
+  * Process
+  * Thread
+  * `DispatchQueue`
+* Networking
+  * REST, JSON
+  * HTTP Request
+  * `URLRequest`, `URLSession`
