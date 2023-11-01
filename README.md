@@ -8,7 +8,7 @@
 | 04 More SwiftUI & Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
 | 05 Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
 | 06 Networking |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
-| 06 Async/await |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
+| 07 Async/await |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
 
 V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, které slouží jako hlavní zdroj informací pro tento kurz [https://cs193p.sites.stanford.edu](https://cs193p.sites.stanford.edu).
 
