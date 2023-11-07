@@ -9,6 +9,7 @@
 | 05 Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
 | 06 Networking |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
 | 07 Async/await |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
+| 08 MVVM |  TBA | [MVVM Architecture](https://www.youtube.com/watch?v=W1ymVx6dmvc)<br>[Applying MVVM](https://www.youtube.com/watch?v=4CkEVfdqjLw) |
 
 V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, které slouží jako hlavní zdroj informací pro tento kurz [https://cs193p.sites.stanford.edu](https://cs193p.sites.stanford.edu).
 
@@ -18,7 +19,27 @@ V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, kte
 
 ## 1. domácí úkol
 
-TBA
+> :exclamation: Deadline: **21. 11. 2023 23:59:59**
+
+> Dokumentace ke kompletnímu API je [zde](https://fitstagram.ackee.cz/docs/)
+
+Vaším úkolem je vytvořit detail příspěvku.
+
+Detail bude obsahovat všechny fotografie, které jsou u příspěvku nahrány = může jich být více než jenom jedna. Zobrazení je na vás, ale může se hodit pogooglit, jak se dělá `PageView` ve SwiftUI. :bulb: :smirk:
+
+Na detailu budé také vidět autorovo uživatelské jméno a nějak hezky do toho zakomponujte komentáře u daného příspěvku – všechno bude zobrazeno na jedné obrazovce.
+
+Pro načtení komentářů použijte následující url:
+```
+https://fitstagram.ackee.cz/api/feed/{postID}/comments
+```
+kde místo `{postID}` dáte ID postu, které přijde z Feedu. Na cviku jsme si říkali něco o tom, jak neblokovat hlavní vlákno, zkuste to dodržet. :pray:
+
+Všechny tyto věci zkuste hezky spojit na jedné obrazovce.
+
+Odevzdávání můžete udělat přes mail `igor.rosocha@ackee.cz`, nebo mě pozvěte do svého repa, kde budete mít řešení, a na mail mi pošlete větev / commit, kde řešení najdu.
+
+**Bonus** (max 2 body): Přidejte na obrazovku tlačítko (nebo nějakou jinou akci), pomocí které se skryjí / zobrazí ostatní informace až na fotky. Tedy provedu akci, všechno až na fotky zmizí, udělám znova akci a informace se zobrazí zpět. Nechceme zobrazit novou obrazovku, kde budou pouze fotky, ale upravit tu stávající.
 
 ## 2. domácí úkol
 
