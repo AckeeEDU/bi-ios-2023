@@ -87,3 +87,14 @@ Rozsah práce by mělo být 3 - 5 obrazovek (může být míň, pokud to dává 
   * REST, JSON
   * HTTP Request
   * `URLRequest`, `URLSession`
+
+### 07 Async/Await
+* `Codable`
+  * `Decodable`, `Encodable`
+  * `CodingKeys`
+  * `init(from decoder: Dedocer)`
+  * `encode(to encoder: Encoder)`
+* Async/await
+  * `Task`
+  * `@MainActor`
+  * func async
