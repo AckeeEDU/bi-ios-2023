@@ -127,3 +127,12 @@ Rozsah práce by mělo být 3 - 5 obrazovek (může být míň, pokud to dává 
   * `Task`
   * `@MainActor`
   * func async
+
+### 08_MVVM
+* Architecture
+  * MVVM
+* Bindings/UI update iOS13+
+  * `ObservableObject`, `@ObservedObject`, `@StateObject`
+  * `@Published`, `objectWillChange.send()`
+* Bindings/UI update iOS17+
+  * `@Observable`, `@Bindable`
