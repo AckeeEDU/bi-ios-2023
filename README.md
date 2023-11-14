@@ -9,7 +9,8 @@
 | 05 Navigation | RB | [Learning More about SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) |
 | 06 Networking |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
 | 07 Async/await |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
-| 08 MVVM |  TBA | [MVVM Architecture](https://www.youtube.com/watch?v=W1ymVx6dmvc)<br>[Applying MVVM](https://www.youtube.com/watch?v=4CkEVfdqjLw) |
+| 08 MVVM |  RB | [MVVM Architecture](https://www.youtube.com/watch?v=W1ymVx6dmvc)<br>[Applying MVVM](https://www.youtube.com/watch?v=4CkEVfdqjLw) |
+| 09 MVVM |  RB | [More MVVM](https://www.youtube.com/watch?v=W1ymVx6dmvc)<br>[Applying MVVM](https://www.youtube.com/watch?v=4CkEVfdqjLw) |
 
 V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, které slouží jako hlavní zdroj informací pro tento kurz [https://cs193p.sites.stanford.edu](https://cs193p.sites.stanford.edu).
 
@@ -77,6 +78,34 @@ Rozsah práce by mělo být 3 - 5 obrazovek (může být míň, pokud to dává 
   * `View`, `some`, `@ViewBuilder`
   * `VStack`, `HStack`, `Text`, `Button`, `Image`
   * SFSymbols
+
+### 03 SwiftUI
+* SwiftUI
+  * `View`, `View Tree` `some View`
+  * Xcode
+  * Recap `VStack`, `HStack`, `Text`, `Button`, `Image`
+  * `Color`, Shepes, `Label`, `Group`, `Spacer`, `Divider`
+  * View Sizing, View modifiers
+  * `PostView` live coding
+
+### 04 More SwiftUI
+* Human Interface Guidelines, Good resources to start with
+* Important Xcode shortcuts
+* SwiftUI
+  * `ScrollView`, `ForEach`, `LazyVStack`/`LazyHStack`
+  * `PostList` live coding
+  * Why structs?
+* Protocols
+  * Equatable, Hashable, Identifiable, Comparable
+* PropertyWrappers 
+
+### 05 SwiftUI Navigation
+* SwiftUI
+  * `@State`, `@Binding`, `@Environment`
+  * `.sheet`, `.fullScreenCover`, `.alert` 
+  * `NavigationStack`, `NavigationPath`
+  * `.toolbar`, `TabView`
+  * `PostList`, `LikesList`, `CommentsView` live coding
 
 ### 06 Networking
 * Multithreading
