@@ -7,11 +7,23 @@
 
 import Foundation
 
-struct Comment: Identifiable, Equatable {
-    let id: UUID = .init()
+struct Comment: Identifiable, Equatable, Decodable {
+    let id: String
     let author: User
     let likes: [User]
     let text: String
+    
+    init(
+        id: String = UUID().uuidString,
+        author: User,
+        likes: [User],
+        text: String
+    ) {
+        self.id = id
+        self.author = author
+        self.likes = likes
+        self.text = text
+    }
 }
 
 extension Comment {

@@ -7,73 +7,82 @@
 
 import SwiftUI
 
+// TODO: Lecture 09 - finish implementation
+/// CommentsView uses iOS17+ changes observation system
 struct CommentsView: View {
-    // MARK: - Public Properties
-    @Binding var isCommentsViewPresented: Bool
-    
     // MARK: - Private Properties
-    @State private var comments = Comment.commentsMock
-    @State private var text = ""
-    @State private var isAlertPresented = false
-    @State private var commentToBeDeleted: Comment?
+    @Bindable var viewModel: CommentsViewModel
     @Environment(\.colorScheme) private var colorScheme
     
     // MARK: - Body
     
     var body: some View {
         NavigationStack {
-            commentsList
+            contentView
+                .frame(maxHeight: .infinity)
                 .safeAreaInset(edge: .bottom) {
                     TextFieldView(
-                        text: $text,
-                        comments: $comments
+                        text: $viewModel.text
+                        //                        comments: $comments
                     )
                     .background(.quaternary)
                 }
-                .alert(
-                    "Chceš to opravdu smazat?",
-                    isPresented: $isAlertPresented,
-                    actions: {
-                        Button(role: .cancel) {
-                            commentToBeDeleted = nil
-                        } label: {
-                            Text("Zavřít")
-                        }
-                        
-                        Button(role: .destructive) {
-                            // Removes all the elements that satisfy the given predicate
-                            comments.removeAll(where: {
-                                $0 == commentToBeDeleted
-                            })
-                        } label: {
-                            Text("Smazat")
-                        }
-                    }
-                ) {
-                    Text("Dojde k nenávratnému smazání komentáře")
-                }
+            //                .alert(
+            //                    "Chceš to opravdu smazat?",
+            //                    isPresented: $viewModel.isAlertPresented,
+            //                    actions: {
+            //                        Button(role: .cancel) {
+            //                            commentToBeDeleted = nil
+            //                        } label: {
+            //                            Text("Zavřít")
+            //                        }
+            //
+            //                        Button(role: .destructive) {
+            //                            // Removes all the elements that satisfy the given predicate
+            //                            comments.removeAll(where: {
+            //                                $0 == commentToBeDeleted
+            //                            })
+            //                        } label: {
+            //                            Text("Smazat")
+            //                        }
+            //                    }
+            //                ) {
+            //                    Text("Dojde k nenávratnému smazání komentáře")
+            //                }
                 .navigationTitle("Comments")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem {
                         Button {
-                            isCommentsViewPresented = false
+                            viewModel.closeCommentsView()
                         } label: {
                             Image(systemName: "xmark")
                         }
                         .tint(.pink)
                     }
                 }
-            //        .onChange(of: text) { oldValue, newValue in
-            //            print(newValue)
-            //        }
+                .task {
+                    await viewModel.fetchComments()
+                }
         }
     }
     
     // MARK: - UI Components
     
+    @ViewBuilder
+    var contentView: some View {
+        if viewModel.isLoading {
+            ProgressView()
+                .progressViewStyle(.circular)
+        } else if viewModel.isEmptyTextVisible {
+            Text("Přidej první komentář 🤓")
+        } else {
+            commentsList
+        }
+    }
+    
     var commentsList: some View {
-        List(comments) { comment in
+        List(viewModel.comments) { comment in
             commentListRow(comment: comment)
                 .listRowSeparator(.hidden)
         }
@@ -107,8 +116,8 @@ struct CommentsView: View {
                     
                     if comment.author == .userMockMe {
                         Button {
-                            commentToBeDeleted = comment
-                            isAlertPresented = true
+                            viewModel.commentToBeDeleted = comment
+                            viewModel.isAlertPresented = true
                         } label: {
                             Image(systemName: "trash")
                                 .foregroundStyle(.pink)
@@ -126,7 +135,7 @@ struct CommentsView: View {
 extension CommentsView {
     struct TextFieldView: View {
         @Binding var text: String
-        @Binding var comments: [Comment]
+        //        @Binding var comments: [Comment]
         
         // MARK: - Body
         
@@ -137,14 +146,14 @@ extension CommentsView {
                         .autocorrectionDisabled()
                     
                     Button {
-                        comments.append(
-                            Comment(
-                                author: .userMockMe,
-                                likes: [],
-                                text: text
-                            )
-                        )
-                        text = ""
+                        //                        comments.append(
+                        //                            Comment(
+                        //                                author: .userMockMe,
+                        //                                likes: [],
+                        //                                text: text
+                        //                            )
+                        //                        )
+                        //                        text = ""
                     } label: {
                         Image(systemName: "paperplane")
                     }
@@ -162,9 +171,12 @@ extension CommentsView {
 }
 
 #Preview {
-    NavigationStack {
+    NavigationStack {
         CommentsView(
-            isCommentsViewPresented: .constant(false)
+            viewModel: .init(
+                postID: "a",
+                onCommentsClose: {}
+            )
         )
     }
 }
