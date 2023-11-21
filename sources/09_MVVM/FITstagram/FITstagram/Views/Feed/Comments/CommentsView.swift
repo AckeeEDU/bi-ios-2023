@@ -22,8 +22,10 @@ struct CommentsView: View {
                 .frame(maxHeight: .infinity)
                 .safeAreaInset(edge: .bottom) {
                     TextFieldView(
-                        text: $viewModel.text
-                        //                        comments: $comments
+                        text: $viewModel.text,
+                        onAddComment: {
+                            viewModel.addComment()
+                        }
                     )
                     .background(.quaternary)
                 }
@@ -115,8 +117,7 @@ struct CommentsView: View {
                     
                     if comment.author == .userMockMe {
                         Button {
-                            viewModel.commentToBeDeleted = comment
-                            viewModel.isAlertPresented = true
+                            viewModel.removeComment(comment: comment)
                         } label: {
                             Image(systemName: "trash")
                                 .foregroundStyle(.pink)
@@ -134,7 +135,7 @@ struct CommentsView: View {
 extension CommentsView {
     struct TextFieldView: View {
         @Binding var text: String
-        //        @Binding var comments: [Comment]
+        var onAddComment: () -> Void
         
         // MARK: - Body
         
@@ -145,14 +146,7 @@ extension CommentsView {
                         .autocorrectionDisabled()
                     
                     Button {
-                        //                        comments.append(
-                        //                            Comment(
-                        //                                author: .userMockMe,
-                        //                                likes: [],
-                        //                                text: text
-                        //                            )
-                        //                        )
-                        //                        text = ""
+                        onAddComment()
                     } label: {
                         Image(systemName: "paperplane")
                     }
@@ -173,7 +167,7 @@ extension CommentsView {
         CommentsView(
             viewModel: .init(
                 postID: "a",
-                onCommentsClose: {}
+                onCommentsClose: { _ in }
             )
         )
     }

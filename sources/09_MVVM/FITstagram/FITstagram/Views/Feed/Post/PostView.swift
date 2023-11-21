@@ -8,16 +8,7 @@
 import SwiftUI
 
 struct PostView: View {
-    
-    // MARK: - Internal properties
-    
-    let post: Post
-    var onCommentsTapped: (() -> Void)?
-                           
-    // MARK: - Private properties
-    
-    // To re-enforce the local nature of @State properties, Apple recommends you mark them as private
-    @State private var isBookmarked = false
+    let viewModel: PostViewModel
 
     // MARK: - Body
 
@@ -26,7 +17,7 @@ struct PostView: View {
             headerView
                 .padding(.horizontal)
             
-            if let photo = post.photos.first {
+            if let photo = viewModel.post.photos.first {
                 RemoteImage(url: photo)
                     .aspectRatio(contentMode: .fill)
                     .frame(
@@ -46,8 +37,8 @@ struct PostView: View {
 
     private var headerView: some View {
         HStack {
-            NavigationLink(value: post.author) {
-                Text(post.author.username)
+            NavigationLink(value: viewModel.post.author) {
+                Text(viewModel.post.author.username)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundStyle(.myForeground)
@@ -81,12 +72,12 @@ struct PostView: View {
     
     private var buttonsHorizontalView: some View {
         HStack(spacing: 16) {
-            imageButton(iconName: "heart") {
-                print($0 + " tapped!")
+            imageButton(iconName: viewModel.isLiked ? "heart.fill" : "heart") { _ in
+                viewModel.likePost()
             }
 
             imageButton(iconName: "message") { _ in
-                onCommentsTapped?()
+                viewModel.showComments()
             }
 
             imageButton(iconName: "paperplane") {
@@ -96,30 +87,30 @@ struct PostView: View {
             Spacer()
 
             imageButton(
-                iconName: isBookmarked ? "bookmark.fill" : "bookmark"
+                iconName: viewModel.isBookmarked ? "bookmark.fill" : "bookmark"
             ) { _ in
-                isBookmarked.toggle()
+                viewModel.toggleBookmark()
             }
         }
     }
 
     private var footerTextsView: some View {
         VStack(alignment: .leading, spacing: 7) {
-            NavigationLink(value: post.likes) {
-                Text(String(post.likesCount) + " To se mi líbí!")
+            NavigationLink(value: viewModel.post.likes) {
+                Text(String(viewModel.post.likesCount) + " To se mi líbí!")
                     .fontWeight(.semibold)
                     .foregroundStyle(.myForeground)
             }
 
-            Text(post.author.username)
+            Text(viewModel.post.author.username)
                 .fontWeight(.semibold)
             +
-            Text(" " + post.text)
+            Text(" " + viewModel.post.text)
 
             Button {
-                onCommentsTapped?()
+                viewModel.showComments()
             } label: {
-                Text("Zobrazit komentáře (" + String(post.comments) + ")")
+                Text("Zobrazit komentáře (" + String(viewModel.post.comments) + ")")
                     .fontWeight(.medium)
                     .foregroundStyle(.gray)
             }
@@ -151,6 +142,12 @@ struct PostView: View {
 
 #Preview {
     NavigationStack {
-        PostView(post: .postMock)
+        PostView(
+            viewModel: .init(
+                post: .postMock,
+                onCommentsTapped: {},
+                onPostUpdated: {}
+            )
+        )
     }
 }

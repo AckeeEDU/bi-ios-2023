@@ -136,3 +136,12 @@ Rozsah práce by mělo být 3 - 5 obrazovek (může být míň, pokud to dává 
   * `@Published`, `objectWillChange.send()`
 * Bindings/UI update iOS17+
   * `@Observable`, `@Bindable`
+
+### 09_MVVM
+* POST requests
+  * without request body, with request body
+  * refreshing views after post requests
+  * faking likes
+* Custom error
+* Interfacing UIKit with SwiftUI
+  * UIImagePickerController - Library and Camera

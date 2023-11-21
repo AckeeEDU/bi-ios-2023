@@ -19,8 +19,9 @@ import Observation
     var text = ""
     var isAlertPresented = false
     var commentToBeDeleted: Comment?
-    var onCommentsClose: () -> Void
+    var onCommentsClose: (Bool) -> Void
     var isLoading = true
+    var commentsChanged = false
     
     var isEmptyTextVisible: Bool {
         !isLoading && comments.isEmpty
@@ -30,15 +31,10 @@ import Observation
     
     init(
         postID: Post.ID,
-        onCommentsClose: @escaping () -> Void
+        onCommentsClose: @escaping (Bool) -> Void
     ) {
         self.postID = postID
-        self.onCommentsClose = {
-            // In the current implementation, we expect that it will not be called elsewhere than from the main thread. But we'll cover this just in case.
-            DispatchQueue.main.async {
-                onCommentsClose()
-            }
-        }
+        self.onCommentsClose = onCommentsClose
     }
     
     // MARK: - Public helpers
@@ -47,22 +43,72 @@ import Observation
     func fetchComments() async {
         defer { isLoading = false }
         isLoading = true
-        var request = URLRequest(
-            url: URL(string: "https://fitstagram.ackee.cz/api/feed/" + postID + "/comments")!
-        )
-        request.httpMethod = "GET"
         
         do {
-            let (data, _) = try await URLSession.shared.data(for: request)
-            let comments = try! JSONDecoder().decode([Comment].self, from: data)
-            print("[Comments]:", comments)
-            self.comments = comments
+            comments = try await performFetchComments()
         } catch {
             print("[ERROR] Comments fetch error ", error)
         }
     }
     
+    @MainActor
     func closeCommentsView() {
-        self.onCommentsClose()
+        onCommentsClose(commentsChanged)
+    }
+    
+    func addComment() {
+        Task { @MainActor in
+            do {
+                try await performAddComment(postID: postID, text: text)
+                text = ""
+                comments = try await performFetchComments()
+                commentsChanged = true
+            } catch {
+                
+            }
+        }
+    }
+    
+    func removeComment(comment: Comment) {
+        commentToBeDeleted = comment
+        isAlertPresented = true
+    }
+    
+    // MARK: - Private helpers
+    
+    private func performAddComment(
+        postID: Post.ID,
+        text: String
+    ) async throws {
+        struct AddCommentBody: Encodable {
+            let text: String
+        }
+        
+        var request = URLRequest(
+            url: URL(string: "https://fitstagram.ackee.cz/api/feed/" + postID + "/comments")!
+        )
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = [
+            "Authorization": myUsername
+        ]
+        let body = AddCommentBody(text: text)
+        request.httpBody = try JSONEncoder().encode(body)
+        
+        print("⬆️ addComment: ", request)
+        let (_, response) = try await URLSession.shared.data(for: request)
+        print("⬇️ addComment: ", ((response as? HTTPURLResponse)?.statusCode ?? ""))
+    }
+    
+    private func performFetchComments() async throws -> [Comment] {
+        var request = URLRequest(
+            url: URL(string: "https://fitstagram.ackee.cz/api/feed/" + postID + "/comments")!
+        )
+        request.httpMethod = "GET"
+        
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let comments = try! JSONDecoder().decode([Comment].self, from: data)
+        print("[Comments]:", comments)
+        return comments
     }
 }

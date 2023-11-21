@@ -29,7 +29,7 @@ struct PostListView: View {
             //                )
             //                .presentationDetents([.fraction(0.8)])
             //                .presentationDragIndicator(.visible)
-            //            }
+//                        }
             .fullScreenCover(
                 item: $viewModel.presentedCommentsPost
             ) { post in
@@ -37,7 +37,11 @@ struct PostListView: View {
                     viewModel:
                         CommentsViewModel(
                             postID: post.id,
-                            onCommentsClose: {
+                            onCommentsClose: { changed in
+                                if changed {
+                                    viewModel.fetchPost(postID: post.id)
+                                }
+                                
                                 viewModel.hideCommentsList()
                             }
                         )
@@ -97,9 +101,17 @@ extension PostListView {
         var body: some View {
             LazyVStack(spacing: 24) {
                 ForEach(viewModel.posts) { post in
-                    PostView(post: post) {
-                        viewModel.showCommentsList(post)
-                    }
+                    PostView(
+                        viewModel: .init(
+                            post: post,
+                            onCommentsTapped: {
+                                viewModel.showCommentsList(post)
+                            },
+                            onPostUpdated: {
+                                viewModel.fetchPost(postID: post.id)
+                            }
+                        )
+                    )
                 }
             }
         }
