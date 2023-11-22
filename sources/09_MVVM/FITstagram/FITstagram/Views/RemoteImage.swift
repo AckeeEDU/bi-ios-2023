@@ -23,7 +23,6 @@ struct RemoteImage: View {
         if let image = image {
             image
                 .resizable()
-                .scaledToFill()
         } else {
             ProgressView()
                 .progressViewStyle(.circular)

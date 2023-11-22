@@ -19,11 +19,11 @@ struct PostView: View {
             
             if let photo = viewModel.post.photos.first {
                 RemoteImage(url: photo)
-                    .aspectRatio(contentMode: .fill)
                     .frame(
                         width: UIScreen.main.bounds.size.width,
                         height: 300
                     )
+                    .aspectRatio(contentMode: .fill)
                     .clipped()
             }
             
@@ -113,6 +113,7 @@ struct PostView: View {
                 Text("Zobrazit komentáře (" + String(viewModel.post.comments) + ")")
                     .fontWeight(.medium)
                     .foregroundStyle(.gray)
+                    .padding(.vertical, 2)
             }
         }
     }

@@ -18,17 +18,18 @@ struct CommentsView: View {
     
     var body: some View {
         NavigationStack {
-            contentView
-                .frame(maxHeight: .infinity)
-                .safeAreaInset(edge: .bottom) {
-                    TextFieldView(
-                        text: $viewModel.text,
-                        onAddComment: {
-                            viewModel.addComment()
-                        }
-                    )
-                    .background(.quaternary)
-                }
+            VStack(spacing: 0) {
+                contentView
+                    .frame(maxHeight: .infinity)
+                
+                TextFieldView(
+                    text: $viewModel.text,
+                    onAddComment: {
+                        viewModel.addComment()
+                    }
+                )
+                .background(.quaternary)
+            }
             //                .alert(
             //                    "Chceš to opravdu smazat?",
             //                    isPresented: $viewModel.isAlertPresented,
@@ -83,11 +84,23 @@ struct CommentsView: View {
     }
     
     var commentsList: some View {
-        List(viewModel.comments) { comment in
-            commentListRow(comment: comment)
-                .listRowSeparator(.hidden)
+        // A view that provides programmatic scrolling, by working with a proxy to scroll to known child views
+        ScrollViewReader { proxy in
+            List(viewModel.comments) { comment in
+                commentListRow(comment: comment)
+                    // Each row must be identifiable
+                    .id(comment.id)
+                    .listRowSeparator(.hidden)
+            }
+            .listStyle(.inset)
+            .onChange(of: viewModel.comments) { _, newValue in
+                // Animate the scroll action 😎
+                withAnimation {
+                    // Scroll to the row with ID that is equal to the ID of the last item
+                    proxy.scrollTo(newValue.last?.id, anchor: .bottom)
+                }
+            }
         }
-        .listStyle(.inset)
     }
     
     func commentListRow(comment: Comment) -> some View {
