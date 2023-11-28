@@ -45,7 +45,34 @@ Odevzdávání můžete udělat přes mail `igor.rosocha@ackee.cz`, nebo mě poz
 
 ## 2. domácí úkol
 
-TBA
+> :exclamation: Deadline: **12. 12. 2023 23:59:59**
+
+Vaším druhým úkolem bude vytvořit obrazovku a kompletní logiku pro přidání nového příspěvku.
+
+Každý nový příspěvek bude obsahovat vybranou fotografii a popisek. Oba parametry jsou povinné.
+
+UI pro vytvoření příspěvku je ve vašich rukou. Do appky přidejte button, který povede na vámi vytvořenou screenu - nabízí se místo vpravo nahoře v navigation baru.
+
+Základní flow pro přídání příspěvku by mělo být následující:
+
+1. Tapnu na "+" a zobrazí se mi obrazovka pro přidání nového příspěvku.
+2. Na této obrazovce vyberu obrázek z galerie (nebo třeba i foťáku, nepovinné), který se potom zobrazí.
+3. Pomocí textového pole přidám k obrázku popisek.
+4. Tapnutím na nějaké další tlačítko se sestaví request na API a data se odešlou.
+6. Vrátí-li se ze serveru chyba, zobrazte ji.
+7. Po úspěšném vytvoření a odeslání příspěvku jsem přesměrován zpět na seznam.
+8. Na seznamu mám možnost na nový příspěvek nascrollovat.
+
+Pro vytvoření příspěvku použijte tento [endpoint](https://fitstagram.ackee.cz/docs/#/Feed/post_feed).
+
+Fotografie je potřeba před odesláním na server upravit.
+
+1. Šířka ani výška fotografie nesmí přesáhnout 2048 pixelů. Může tedy vzniknout potřeba obrázek zmenšit. 
+2. Fotky posílejte na server jako JPEG zakódovaný do řetězce pomocí base64.
+
+Obě výše zmíněné operace jsme na cvikách neukazovali, ale jednoduchým Googlením se dostanete k odpovědím. Pokud by se nedařilo, dáme vám k dispozici kód, pomocí kterého to uděláte. Záměrně vám to nechceme dávat hned na začátek, ať si to můžete zkusit. Opravdu to není nic složitého.
+
+Odevzdání stejně jako první úkol - na `igor.rosocha@ackee.cz`, nebo invite do repa, popř. dejte vědět o nových změnách v repu z prvního úkolu.
 
 ## Semestrální práce
 
