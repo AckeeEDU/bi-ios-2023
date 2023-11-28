@@ -11,6 +11,7 @@
 | 07 Async/await |  IR | [Multithreading, Error Handling](https://www.youtube.com/watch?v=9gA1_Ipm-yY) |
 | 08 MVVM |  RB | [MVVM Architecture](https://www.youtube.com/watch?v=W1ymVx6dmvc)<br>[Applying MVVM](https://www.youtube.com/watch?v=4CkEVfdqjLw) |
 | 09 MVVM |  RB | [More MVVM](https://www.youtube.com/watch?v=W1ymVx6dmvc)<br>[Applying MVVM](https://www.youtube.com/watch?v=4CkEVfdqjLw) |
+| 10 Enviroment | JO | Není
 
 V průběhu kurzu doporučujeme shlédnout online přednášky ze Stanfordu, které slouží jako hlavní zdroj informací pro tento kurz [https://cs193p.sites.stanford.edu](https://cs193p.sites.stanford.edu).
 
@@ -145,3 +146,7 @@ Rozsah práce by mělo být 3 - 5 obrazovek (může být míň, pokud to dává 
 * Custom error
 * Interfacing UIKit with SwiftUI
   * UIImagePickerController - Library and Camera
+
+### 10 Environment
+• řešení přvního domácího úkolu
+* `@Environment` & `EnvironmentKeys`
