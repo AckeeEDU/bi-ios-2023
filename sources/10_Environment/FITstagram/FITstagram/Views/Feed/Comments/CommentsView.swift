@@ -179,7 +179,7 @@ extension CommentsView {
     NavigationStack {
         CommentsView(
             viewModel: .init(
-                postID: "a",
+                postID: "1",
                 onCommentsClose: { _ in }
             )
         )

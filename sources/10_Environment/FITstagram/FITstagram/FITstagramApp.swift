@@ -14,5 +14,6 @@ struct FITstagramApp: App {
             ContentView()
                 .tint(.pink) // Tint color is applied to all nested precedents
         }
+        .environment(\.theme, .init(commentAuthor: .red))
     }
 }

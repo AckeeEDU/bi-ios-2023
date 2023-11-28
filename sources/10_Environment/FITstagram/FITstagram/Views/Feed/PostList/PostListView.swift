@@ -56,6 +56,9 @@ struct PostListView: View {
             .navigationDestination(for: User.self) {
                 UserDetailView(user: $0)
             }
+            .navigationDestination(for: Post.self) { post in
+                PostDetailView(viewModel: .init(postID: post.id))
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .topBarLeading) {
                     Button {

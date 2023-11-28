@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69821E582B164D0F00D9303F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69821E572B164D0F00D9303F /* Theme.swift */; };
+		698DDE342B163D3C00473C61 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698DDE332B163D3C00473C61 /* URLExtensions.swift */; };
+		698DDE372B163EA600473C61 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698DDE362B163EA600473C61 /* PostDetailView.swift */; };
 		78E5CE0A2AF1271200B18ACB /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5CE092AF1271200B18ACB /* RemoteImage.swift */; };
 		9709C4FD2AD99C6400E5769D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709C4FC2AD99C6400E5769D /* User.swift */; };
 		9709C4FF2AD99CCB00E5769D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9709C4FE2AD99CCB00E5769D /* Comment.swift */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69821E572B164D0F00D9303F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		698DDE332B163D3C00473C61 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		698DDE362B163EA600473C61 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		78E5CE092AF1271200B18ACB /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		9709C4FC2AD99C6400E5769D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9709C4FE2AD99CCB00E5769D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -103,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		698DDE352B163E9500473C61 /* Post detail */ = {
+			isa = PBXGroup;
+			children = (
+				698DDE362B163EA600473C61 /* PostDetailView.swift */,
+			);
+			path = "Post detail";
+			sourceTree = "<group>";
+		};
 		9783D0BF2AD594FE00A85508 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +214,7 @@
 		97AE176F2AE8393400B7702C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				698DDE352B163E9500473C61 /* Post detail */,
 				97C38B752B0D480F0095A7D3 /* Post */,
 				978771262B0403B200C8B828 /* Comments */,
 				979EE6042B03CAEF00744B50 /* PostsList */,
@@ -227,6 +242,7 @@
 				97AE176E2AE8391F00B7702C /* MyProfile */,
 				97AE17692AE8082100B7702C /* Onboarding */,
 				78E5CE092AF1271200B18ACB /* RemoteImage.swift */,
+				69821E572B164D0F00D9303F /* Theme.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				97BFEC4C2AD6859800595447 /* ViewExtensions.swift */,
+				698DDE332B163D3C00473C61 /* URLExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,16 +401,19 @@
 				97BFEC482AD6827700595447 /* Post.swift in Sources */,
 				97AE176D2AE81A4000B7702C /* ContentView.swift in Sources */,
 				97AE17712AE8395900B7702C /* MyProfileView.swift in Sources */,
+				69821E582B164D0F00D9303F /* Theme.swift in Sources */,
 				9746FE8A2ADEE1B6003454C3 /* CommentsView.swift in Sources */,
 				97C38B792B0D480F0095A7D3 /* PostView.swift in Sources */,
 				9709C4FF2AD99CCB00E5769D /* Comment.swift in Sources */,
 				979EE6062B03CB0200744B50 /* PostListViewModel.swift in Sources */,
 				97BFEC4D2AD6859800595447 /* ViewExtensions.swift in Sources */,
+				698DDE372B163EA600473C61 /* PostDetailView.swift in Sources */,
 				9746FE882ADEDB31003454C3 /* LikesView.swift in Sources */,
 				78E5CE0A2AF1271200B18ACB /* RemoteImage.swift in Sources */,
 				9709C4FD2AD99C6400E5769D /* User.swift in Sources */,
 				9710119D2AE5A22500172926 /* UserDetailView.swift in Sources */,
 				9783D0CC2AD594FE00A85508 /* FITstagramApp.swift in Sources */,
+				698DDE342B163D3C00473C61 /* URLExtensions.swift in Sources */,
 				97AE176B2AE8082100B7702C /* OnboardingView.swift in Sources */,
 				9775E1642B095FAC001C003B /* EditMyProfileView.swift in Sources */,
 			);
