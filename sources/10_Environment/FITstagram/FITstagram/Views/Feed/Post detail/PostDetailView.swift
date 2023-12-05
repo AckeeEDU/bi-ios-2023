@@ -37,7 +37,9 @@ final class PostDetailViewModel {
     }
     
     private func fetchPostDetail() async throws -> Post {
-        apiService.fetch()
+        let request = URLRequest(url: .post(id: postID))
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return try JSONDecoder().decode(Post.self, from: data)
     }
     
     private func fetchComments() async throws -> [Comment] {
